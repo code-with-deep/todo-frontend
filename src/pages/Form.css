@@ -1,0 +1,374 @@
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(0, 106, 220, 0.3), transparent 36%),
+    radial-gradient(circle at 86% 90%, rgba(14, 165, 161, 0.22), transparent 32%),
+    linear-gradient(145deg, #e2f0ff, #e0faf3);
+}
+
+.form-card {
+  width: min(100%, 460px);
+  background: rgba(255, 255, 255, 0.89);
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(10px);
+  animation: fadeSlide 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  top: -100px;
+  right: -90px;
+  background: radial-gradient(circle, rgba(14, 165, 161, 0.2), transparent 68%);
+  pointer-events: none;
+}
+
+.form-card h1 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #10243b;
+  font-size: clamp(1.65rem, 1.24rem + 1vw, 2.05rem);
+}
+
+.form-subtitle { text-align: center; color: #3f5674; font-size: 0.9rem; margin-bottom: 16px; }
+.field-label { display: block; margin-bottom: 6px; color: #344c68; font-size: 0.82rem; font-weight: 700; }
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px 13px;
+  margin-bottom: 12px;
+  border-radius: 13px;
+  border: 1px solid #c7d9ef;
+  background: #f8fbff;
+  color: #10233a;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.date-picker-wrap { margin-bottom: 10px; background: #f2f8ff; border: 1px solid #cfe0f3; border-radius: 14px; padding: 10px; }
+.date-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+.today-btn { border: 1px solid #c5d8f0; background: #e8f1fd; color: #0e3c74; border-radius: 11px; padding: 9px 11px; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; }
+.today-btn:hover { background: #dcecff; transform: translateY(-1px); }
+.date-note { margin-top: 7px; color: #4e6685; font-size: 0.76rem; }
+
+.form-card textarea { resize: vertical; min-height: 108px; }
+.form-card input:focus,
+.form-card textarea:focus { border-color: #0b7bcf; box-shadow: 0 0 0 4px rgba(11, 123, 207, 0.14); background: #ffffff; }
+.form-actions { display: flex; justify-content: space-between; gap: 10px; }
+.form-card .primary-btn { background: linear-gradient(135deg, #006adc, #0a8cbe); color: white; border: none; padding: 11px 17px; border-radius: 12px; cursor: pointer; font-weight: 800; transition: transform 0.15s ease, box-shadow 0.2s ease; }
+.cancel-btn { background: #e5eef9; color: #11253d; border: 1px solid #c6d8ef; padding: 11px 17px; border-radius: 12px; cursor: pointer; font-weight: 700; }
+.form-card .primary-btn:hover,
+.cancel-btn:hover { transform: translateY(-1px); }
+.form-card .primary-btn:hover { box-shadow: 0 10px 20px rgba(0, 106, 220, 0.3); }
+.form-card .primary-btn:disabled { opacity: 0.72; cursor: not-allowed; transform: none; box-shadow: none; }
+.form-card .error { color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 9px 10px; margin-bottom: 10px; font-size: 0.85rem; }
+.checkbox-label { display: flex; align-items: center; gap: 8px; margin: 10px 0 15px; font-size: 0.9rem; color: #1f334c; }
+.loading { text-align: center; margin-top: 42px; color: #10243b; font-weight: 700; }
+
+.dark .form-card { background: rgba(13, 23, 41, 0.84); border-color: rgba(196, 215, 238, 0.15); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35); }
+.dark .form-card h1,
+.dark .checkbox-label,
+.dark .loading { color: #e2e8f0; }
+.dark .form-subtitle { color: #c4d2e4; }
+.dark .form-card input,
+.dark .form-card textarea { background: #1a2a44; border-color: #355075; color: #e4edf7; }
+.dark .date-picker-wrap { background: #192a43; border-color: #304868; }
+.dark .today-btn { background: #28405f; border-color: #375678; color: #deecff; }
+.dark .today-btn:hover { background: #315175; }
+.dark .date-note { color: #b9cbe1; }
+.dark .cancel-btn { background: #314866; color: #e4edf7; border-color: transparent; }
+
+@media (max-width: 560px) {
+  .form-card { padding: 24px 20px; }
+  .form-actions { flex-direction: column; }
+  .date-row { grid-template-columns: 1fr; }
+  .form-card .primary-btn,
+  .cancel-btn { width: 100%; }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(0, 106, 220, 0.3), transparent 36%),
+    radial-gradient(circle at 86% 90%, rgba(14, 165, 161, 0.22), transparent 32%),
+    linear-gradient(145deg, #e2f0ff, #e0faf3);
+}
+
+.form-card {
+  width: min(100%, 460px);
+  background: rgba(255, 255, 255, 0.89);
+  padding: 30px;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(10px);
+  animation: fadeSlide 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 999px;
+  top: -100px;
+  right: -90px;
+  background: radial-gradient(circle, rgba(14, 165, 161, 0.2), transparent 68%);
+  pointer-events: none;
+}
+
+.form-card h1 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #10243b;
+  font-size: clamp(1.65rem, 1.24rem + 1vw, 2.05rem);
+}
+
+.form-subtitle {
+  text-align: center;
+  color: #3f5674;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #344c68;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px 13px;
+  margin-bottom: 12px;
+  border-radius: 13px;
+  border: 1px solid #c7d9ef;
+  background: #f8fbff;
+  color: #10233a;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.date-picker-wrap {
+  margin-bottom: 10px;
+  background: #f2f8ff;
+  border: 1px solid #cfe0f3;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.today-btn {
+  border: 1px solid #c5d8f0;
+  background: #e8f1fd;
+  color: #0e3c74;
+  border-radius: 11px;
+  padding: 9px 11px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.today-btn:hover {
+  background: #dcecff;
+  transform: translateY(-1px);
+}
+
+.date-note {
+  margin-top: 7px;
+  color: #4e6685;
+  font-size: 0.76rem;
+}
+
+.form-card textarea {
+  resize: vertical;
+  min-height: 108px;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #0b7bcf;
+  box-shadow: 0 0 0 4px rgba(11, 123, 207, 0.14);
+  background: #ffffff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-card .primary-btn {
+  background: linear-gradient(135deg, #006adc, #0a8cbe);
+  color: white;
+  border: none;
+  padding: 11px 17px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.cancel-btn {
+  background: #e5eef9;
+  color: #11253d;
+  border: 1px solid #c6d8ef;
+  padding: 11px 17px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.form-card .primary-btn:hover,
+.cancel-btn:hover {
+  transform: translateY(-1px);
+}
+
+.form-card .primary-btn:hover {
+  box-shadow: 0 10px 20px rgba(0, 106, 220, 0.3);
+}
+
+.form-card .primary-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-card .error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 9px 10px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 15px;
+  font-size: 0.9rem;
+  color: #1f334c;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 42px;
+  color: #10243b;
+  font-weight: 700;
+}
+
+.dark .form-card {
+  background: rgba(13, 23, 41, 0.84);
+  border-color: rgba(196, 215, 238, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.dark .form-card h1,
+.dark .checkbox-label,
+.dark .loading {
+  color: #e2e8f0;
+}
+
+.dark .form-subtitle {
+  color: #c4d2e4;
+}
+
+.dark .form-card input,
+.dark .form-card textarea {
+  background: #1a2a44;
+  border-color: #355075;
+  color: #e4edf7;
+}
+
+.dark .date-picker-wrap {
+  background: #192a43;
+  border-color: #304868;
+}
+
+.dark .today-btn {
+  background: #28405f;
+  border-color: #375678;
+  color: #deecff;
+}
+
+.dark .today-btn:hover {
+  background: #315175;
+}
+
+.dark .date-note {
+  color: #b9cbe1;
+}
+
+.dark .cancel-btn {
+  background: #314866;
+  color: #e4edf7;
+  border-color: transparent;
+}
+
+@media (max-width: 560px) {
+  .form-card {
+    padding: 24px 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .date-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card .primary-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

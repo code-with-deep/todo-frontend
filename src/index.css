@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --font-body: 'Sora', 'Segoe UI', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+
+  --text-main: #132238;
+  --text-soft: #4f5f76;
+  --surface: #ffffff;
+  --surface-soft: #f4f8ff;
+  --line: #d2dded;
+
+  --brand: #006adc;
+  --brand-strong: #0051b3;
+  --accent: #0ea5a1;
+  --danger: #cf2f2f;
+
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 22px 52px rgba(5, 27, 65, 0.14);
+  --shadow-card: 0 14px 30px rgba(8, 32, 71, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 14% 14%, rgba(14, 165, 161, 0.2), transparent 33%),
+    radial-gradient(circle at 88% 86%, rgba(0, 106, 220, 0.22), transparent 36%),
+    linear-gradient(150deg, #eef6ff, #f6fdfb);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(0, 106, 220, 0.22);
+  color: #0f2036;
+}
+
+:root {
+  --font-body: 'Sora', 'Segoe UI', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+
+  --text-main: #132238;
+  --text-soft: #4f5f76;
+  --surface: #ffffff;
+  --surface-soft: #f4f8ff;
+  --line: #d2dded;
+
+  --brand: #006adc;
+  --brand-strong: #0051b3;
+  --accent: #0ea5a1;
+  --danger: #cf2f2f;
+
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 22px 52px rgba(5, 27, 65, 0.14);
+  --shadow-card: 0 14px 30px rgba(8, 32, 71, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 14% 14%, rgba(14, 165, 161, 0.2), transparent 33%),
+    radial-gradient(circle at 88% 86%, rgba(0, 106, 220, 0.22), transparent 36%),
+    linear-gradient(150deg, #eef6ff, #f6fdfb);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(0, 106, 220, 0.22);
+  color: #0f2036;
+}
