@@ -8,7 +8,7 @@ export function setAxiosToken(token) {
 }
 
 const api = axios.create({
-  baseURL: 'http://localhost:5001/api',
+  baseURL: 'https://todo-backend-fflt.onrender.com',
   withCredentials: false
 });
 
